@@ -22,6 +22,7 @@ import './App.css'
 // types
 import { User } from './types/models'
 import CreateListing from './pages/CreateListing/CreateListing'
+import BrowseListings from './pages/BrowseListings/BrowseListings'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -56,6 +57,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <Profiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/listings"
+          element={
+            <ProtectedRoute user={user}>
+              <BrowseListings />
             </ProtectedRoute>
           }
         />

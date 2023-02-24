@@ -25,4 +25,15 @@ async function createListing(formData: CreateListingFormData): Promise<Listing> 
   }
 }
 
-export { createListing }
+async function getAllListings(): Promise<Listing[]> {
+  try {
+    const res = await fetch(BASE_URL, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json() as Listing[]
+  } catch (error) {
+    throw error
+  }
+}
+
+export { createListing, getAllListings }
