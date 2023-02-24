@@ -1,5 +1,11 @@
+// types
+import { Listing } from "../types/models";
+
 /* ---------======= custom props ======--------- */
 
+export interface ListingProps {
+  listing: Listing
+}
 
 
 /* ---------===== auth form props =====--------- */

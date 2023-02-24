@@ -8,6 +8,7 @@ export interface Listing {
   id: number;
   itemName: string;
   photos: string[];
+  description: string;
   condition: string;
   openToTrade: boolean;
   price: number;
