@@ -4,6 +4,15 @@
 
 /* ---------===== auth forms =====--------- */
 
+export interface CreateListingFormData {
+  itemName: string;
+  photos: string[];
+  description: string;
+  condition: string;
+  openToTrade: boolean;
+  price: number;
+}
+
 export interface LoginFormData {
   email: string;
   password: string;

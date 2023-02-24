@@ -21,10 +21,11 @@ import './App.css'
 
 // types
 import { User } from './types/models'
+import CreateListing from './pages/CreateListing/CreateListing'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
-  
+
   const [user, setUser] = useState<User | null>(authService.getUser())
 
   const handleLogout = (): void => {
@@ -63,6 +64,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/listings/create"
+          element={
+            <ProtectedRoute user={user}>
+              <CreateListing />
             </ProtectedRoute>
           }
         />

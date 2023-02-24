@@ -4,8 +4,19 @@
 
 /* ---------===== auth models =====--------- */
 
+export interface Listing {
+  id: number;
+  itemName: string;
+  photos: string[];
+  condition: string;
+  openToTrade: boolean;
+  price: number;
+  profileId: { id: number};
+}
+
 export interface Profile {
   name: string;
+  userName: string;
   photo?: string;
   id: number;
   createdAt: string;
@@ -20,3 +31,4 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
+
