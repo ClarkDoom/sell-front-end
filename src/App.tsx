@@ -81,7 +81,7 @@ function App(): JSX.Element {
           path="/listings/:id"
           element={
             <ProtectedRoute user={user}>
-              <ShowListing />
+              <ShowListing loggedInUser={user?.profile.id}/>
             </ProtectedRoute>
           }
         />

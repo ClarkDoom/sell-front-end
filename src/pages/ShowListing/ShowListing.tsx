@@ -4,15 +4,18 @@ import { Link } from "react-router-dom";
 
 // types
 import { Profile, Listing } from "../../types/models";
+import { ShowListingProps } from "../../types/props";
 
 // services
 import * as profileService from '../../services/profileService'
 import * as listingService from '../../services/listingService'
 
-const ShowListing = (): JSX.Element => {
+const ShowListing = (props: ShowListingProps): JSX.Element => {
   const location = useLocation()
   const listingId = location.state.listingId
   const profileId = location.state.profileId
+
+  const { loggedInUser } = props
 
   const [profile, setProfile] = useState<Profile>({
     name: "",
@@ -30,7 +33,7 @@ const ShowListing = (): JSX.Element => {
     condition: "",
     openToTrade: false,
     price: 0,
-    profileId: { id: 0}
+    profileId: { id: 0 }
   })
 
   useEffect((): void => {
@@ -38,7 +41,7 @@ const ShowListing = (): JSX.Element => {
       try {
         const listingData: Listing = await listingService.getListing(listingId)
         setListing(listingData)
-        
+
       } catch (error) {
         console.log(error)
       }
@@ -57,18 +60,22 @@ const ShowListing = (): JSX.Element => {
     }
     fetchProfile()
   }, [listingId])
-  
-  if(!profileId || !listingId) return <>loading</>
+
+  if (!profileId || !listingId) return <>loading</>
 
   return (
     <>
       <h1>ShowListing Component</h1>
-      <Link
-        to={`/listings/${listing.id}/edit`}
-        state={listing}
-      >
-        Edit Listing
-      </Link>
+      {loggedInUser === listing.profileId ?
+        <Link
+          to={`/listings/${listing.id}/edit`}
+          state={listing}
+        >
+          Edit Listing
+        </Link>
+        :
+        ""
+      }
       <ul>
         <li>{listing.itemName}</li>
         <li>{listing.description}</li>
