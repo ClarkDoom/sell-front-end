@@ -4,7 +4,7 @@
 
 /* ---------===== auth forms =====--------- */
 
-export interface CreateListingFormData {
+export interface ListingFormData {
   itemName: string;
   photos: string[];
   description: string;

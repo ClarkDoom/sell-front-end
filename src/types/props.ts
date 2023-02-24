@@ -9,9 +9,13 @@ export interface ListingProps {
 
 export interface ProfileProps {
   profile: Profile,
+}
+export interface UserProps {
   user: User
 }
-
+export interface EditListingProps {
+  listing: Listing
+}
 
 /* ---------===== auth form props =====--------- */
 

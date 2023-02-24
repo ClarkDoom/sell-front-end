@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 
 // types
 import { Profile } from "../../types/models";
-import { ProfileProps } from "../../types/props";
+import { UserProps } from "../../types/props";
 
 // services
 import * as profileService from '../../services/profileService'
 
-const ProfilePage = (props: ProfileProps) => {
+const ProfilePage = (props: UserProps) => {
   const { user } = props
-
 
   const [profile, setProfile] = useState<Profile>({
     name: "",

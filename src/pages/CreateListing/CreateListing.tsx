@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-import { CreateListingFormData } from "../../types/forms";
+import { ListingFormData } from "../../types/forms";
 
 // services
 import * as listingService from '../../services/listingService'
@@ -11,7 +11,7 @@ const CreateListing = () => {
 
   const [checked, setChecked] = useState(false)
 
-  const [formData, setFormData] = useState<CreateListingFormData>({
+  const [formData, setFormData] = useState<ListingFormData>({
     itemName: '',
     photos: [],
     description: '',
@@ -42,7 +42,7 @@ const CreateListing = () => {
     evt.preventDefault()
     try {
       await listingService.createListing(formData)
-      navigate('/')
+      navigate('/listings')
     } catch (err) {
       console.log(err)
     }

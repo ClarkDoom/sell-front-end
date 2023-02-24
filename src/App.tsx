@@ -2,17 +2,19 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
-// page components
+// components
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Home/Home'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-
-// components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import ProfilePage from './pages/Profile/ProfilePage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+import CreateListing from './pages/CreateListing/CreateListing'
+import BrowseListings from './pages/BrowseListings/BrowseListings'
+import ShowListing from './pages/ShowListing/ShowListing'
+import EditListing from './pages/EditListing/EditListing'
 
 // services
 import * as authService from './services/authService'
@@ -22,9 +24,6 @@ import './App.css'
 
 // types
 import { User } from './types/models'
-import CreateListing from './pages/CreateListing/CreateListing'
-import BrowseListings from './pages/BrowseListings/BrowseListings'
-import ShowListing from './pages/ShowListing/ShowListing'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -49,7 +48,7 @@ function App(): JSX.Element {
         <Route
           path="/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
-        />
+        /> 
         <Route
           path="/login"
           element={<Login handleAuthEvt={handleAuthEvt} />}
@@ -83,6 +82,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <ShowListing />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/listings/:id/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditListing />
             </ProtectedRoute>
           }
         />

@@ -13,7 +13,7 @@ const ListingCard = (props: ListingProps): JSX.Element => {
       <p>{listing.price}</p>
       <Link 
         to={`/listings/${listing.id}`}
-        state={listing}
+        state={{listingId: listing.id, profileId: listing.profileId}}
       >
         More Details
       </Link>

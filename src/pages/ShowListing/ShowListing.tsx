@@ -1,15 +1,18 @@
 import { useLocation } from "react-router";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // types
-import { Profile } from "../../types/models";
+import { Profile, Listing } from "../../types/models";
 
 // services
 import * as profileService from '../../services/profileService'
+import * as listingService from '../../services/listingService'
 
-const ShowListing = () => {
+const ShowListing = (): JSX.Element => {
   const location = useLocation()
-  const listing = location.state
+  const listingId = location.state.listingId
+  const profileId = location.state.profileId
 
   const [profile, setProfile] = useState<Profile>({
     name: "",
@@ -19,22 +22,53 @@ const ShowListing = () => {
     createdAt: "",
     updatedAt: ""
   })
+  const [listing, setListing] = useState<Listing>({
+    id: 0,
+    itemName: "",
+    photos: [],
+    description: "",
+    condition: "",
+    openToTrade: false,
+    price: 0,
+    profileId: { id: 0}
+  })
+
+  useEffect((): void => {
+    const fetchListing = async (): Promise<void> => {
+      try {
+        const listingData: Listing = await listingService.getListing(listingId)
+        setListing(listingData)
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchListing()
+  }, [listingId])
 
   useEffect((): void => {
     const fetchProfile = async (): Promise<void> => {
       try {
-        const profileData: Profile = await profileService.getProfile(listing.profileId)
+        const profileData: Profile = await profileService.getProfile(profileId)
         setProfile(profileData)
       } catch (error) {
         console.log(error)
       }
     }
     fetchProfile()
-  }, [listing])
+  }, [listingId])
+  
+  if(!profileId || !listingId) return <>loading</>
 
   return (
     <>
       <h1>ShowListing Component</h1>
+      <Link
+        to={`/listings/${listing.id}/edit`}
+        state={listing}
+      >
+        Edit Listing
+      </Link>
       <ul>
         <li>{listing.itemName}</li>
         <li>{listing.description}</li>
