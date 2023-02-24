@@ -11,7 +11,6 @@ async function getProfile(profileId: number): Promise<Profile> {
     const res = await fetch(`${BASE_URL}/${profileId}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } 
     })
-    console.log(res)
     return await res.json() as Profile
   } catch (error) {
     throw error

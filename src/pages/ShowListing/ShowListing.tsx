@@ -21,12 +21,10 @@ const ShowListing = () => {
   })
 
   useEffect((): void => {
-    console.log("listing.profileId", listing.profileId)
     const fetchProfile = async (): Promise<void> => {
       try {
         const profileData: Profile = await profileService.getProfile(listing.profileId)
         setProfile(profileData)
-        console.log("profile", profile)
       } catch (error) {
         console.log(error)
       }
@@ -45,6 +43,7 @@ const ShowListing = () => {
         <li>{listing.price}</li>
       </ul>
       <h1>Seller</h1>
+      <p>{profile.name}</p>
     </>
   );
 }

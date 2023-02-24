@@ -1,10 +1,15 @@
 // types
-import { Listing } from "../types/models";
+import { Listing, Profile, User } from "../types/models";
 
 /* ---------======= custom props ======--------- */
 
 export interface ListingProps {
   listing: Listing
+}
+
+export interface ProfileProps {
+  profile: Profile,
+  user: User
 }
 
 

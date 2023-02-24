@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import ProfilePage from './pages/Profile/ProfilePage'
 
 // services
 import * as authService from './services/authService'
@@ -58,6 +59,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <Profiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfilePage user={user}/>
             </ProtectedRoute>
           }
         />
