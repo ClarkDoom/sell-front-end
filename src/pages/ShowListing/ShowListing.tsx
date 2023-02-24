@@ -11,19 +11,28 @@ const ShowListing = () => {
   const location = useLocation()
   const listing = location.state
 
-  const [profile, setProfile] = useState<Profile>({})
+  const [profile, setProfile] = useState<Profile>({
+    name: "",
+    userName: "",
+    photo: "",
+    id: 0,
+    createdAt: "",
+    updatedAt: ""
+  })
 
   useEffect((): void => {
+    console.log("listing.profileId", listing.profileId)
     const fetchProfile = async (): Promise<void> => {
       try {
         const profileData: Profile = await profileService.getProfile(listing.profileId)
         setProfile(profileData)
+        console.log("profile", profile)
       } catch (error) {
         console.log(error)
       }
     }
     fetchProfile()
-  })
+  }, [listing])
 
   return (
     <>
@@ -36,7 +45,6 @@ const ShowListing = () => {
         <li>{listing.price}</li>
       </ul>
       <h1>Seller</h1>
-      
     </>
   );
 }

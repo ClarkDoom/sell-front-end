@@ -24,7 +24,7 @@ const BrowseListings = () => {
       }
     }
     fetchListings()
-  }, [listings])
+  }, [])
 
   return (
     <>
