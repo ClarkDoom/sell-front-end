@@ -1,5 +1,5 @@
 // stylesheets
-import styles from './Landing.module.css'
+import styles from './Home.module.css'
 
 // types
 import { User } from '../../types/models'
