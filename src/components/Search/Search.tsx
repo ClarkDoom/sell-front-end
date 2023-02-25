@@ -41,7 +41,7 @@ function Search(props: SearchProps) {
     );
   }
 
-  const handleCategory = (evt) => {
+  const handleCategory = (evt: React.ChangeEvent<HTMLInputElement>) => {
     evt.preventDefault()
     setSearchField(evt.target.value)
   }
@@ -58,11 +58,10 @@ function Search(props: SearchProps) {
           onChange={handleChange}
         />
         <h4>Categories</h4>
-        <form onClick={handleCategory}>
-          <button value="Movie">Movies</button>
-          <button value="Book">Books</button>
-          <button value="Music">Music</button>
-        </form>
+          <button onClick={handleCategory} value="Movie">Movies</button>
+          <button onClick={handleCategory} value="Book">Books</button>
+          <button onClick={handleCategory} value="Music">Music</button>
+          <button onClick={handleCategory} value="">Reset</button>
       </div>
       {searchList()}
     </section>
