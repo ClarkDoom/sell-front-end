@@ -30,10 +30,10 @@ const BrowseListings = () => {
   return (
     <>
       <Search details={listings}/>
-      <h1>BrowseListings Component</h1>
+      {/* <h1>BrowseListings Component</h1>
       {listings.map(listing =>
         <ListingCard listing={listing} key={listing.itemName} />
-      )}
+      )} */}
     </>
   );
 }

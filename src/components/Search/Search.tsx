@@ -8,7 +8,6 @@ interface SearchProps {
   details: Listing[]
 }
 
-
 function Search(props: SearchProps) {
 
   const { details } = props
@@ -45,7 +44,7 @@ function Search(props: SearchProps) {
   return (
     <section>
       <div>
-        <h2>Search your course</h2>
+        <h2>Search Listings</h2>
       </div>
       <div>
         <input 

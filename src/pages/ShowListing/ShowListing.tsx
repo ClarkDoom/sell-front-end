@@ -36,7 +36,8 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
     condition: "",
     openToTrade: false,
     price: 0,
-    profileId: { id: 0 }
+    profileId: { id: 0 },
+    type: ''
   })
 
   const handleDelete = async (evt: React.FormEvent): Promise<void> => {
