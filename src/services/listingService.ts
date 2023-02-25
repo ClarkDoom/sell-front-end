@@ -9,9 +9,11 @@ import { ListingFormData } from '../types/forms'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/listings`
 
-async function createListing(formData: ListingFormData): Promise<Listing> {
+// 'api/listings/:profileId/create'
+
+async function createListing(formData: ListingFormData, profileId: number): Promise<Listing> {
   try {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(`${BASE_URL}/${profileId}/create`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,

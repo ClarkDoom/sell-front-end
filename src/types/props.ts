@@ -3,6 +3,10 @@ import { Listing, Profile, User } from "../types/models";
 
 /* ---------======= custom props ======--------- */
 
+export interface CreateListingProps {
+  profileId: number
+}
+
 export interface ShowListingProps {
   loggedInUser: number
 }
