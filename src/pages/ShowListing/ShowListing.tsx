@@ -100,6 +100,7 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
         <li>{listing.condition}</li>
         <li>{listing.openToTrade ? 'Willing to Trade' : 'Not Willing to Trade'}</li>
         <li>{listing.price}</li>
+        <li>{listing.type}</li>
       </ul>
       <h1>Seller</h1>
       <p>{profile.name}</p>

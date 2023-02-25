@@ -11,6 +11,7 @@ export interface ListingFormData {
   condition: string;
   openToTrade: boolean;
   price: number;
+  type: string;
 }
 
 export interface LoginFormData {

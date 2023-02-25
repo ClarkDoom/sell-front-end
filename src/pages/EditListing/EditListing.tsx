@@ -23,9 +23,10 @@ const EditListing = () => {
     condition: listing.condition,
     openToTrade: listing.openToTrade,
     price: listing.price,
+    type: listing.type
   })
 
-  const { itemName, photos, condition, description, openToTrade, price } = formData
+  const { itemName, photos, condition, description, openToTrade, price, type } = formData
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -45,7 +46,7 @@ const EditListing = () => {
     evt.preventDefault()
     try {
       await listingService.editListing(formData, listing.id)
-      navigate(`/listings/${listing.id}`, {state: {listingId: listing.id, profileId: listing.profileId}})
+      navigate(`/listings/${listing.id}`, { state: { listingId: listing.id, profileId: listing.profileId } })
     } catch (err) {
       console.log(err)
     }
@@ -92,6 +93,21 @@ const EditListing = () => {
             <option value="Like New">Like New</option>
             <option value="Fair">Fair</option>
             <option value="Poor">Poor</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="type">Listing Type</label>
+          <select
+            id="type"
+            value={type}
+            name="type"
+            onChange={selectChange}
+          >
+            <option value="Select">Select</option>
+            <option value="Movie">Movie</option>
+            <option value="Books">Books</option>
+            <option value="Music">Music</option>
           </select>
         </div>
 
