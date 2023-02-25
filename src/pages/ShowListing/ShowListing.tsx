@@ -1,6 +1,7 @@
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 
 // types
 import { Profile, Listing } from "../../types/models";
@@ -11,6 +12,7 @@ import * as profileService from '../../services/profileService'
 import * as listingService from '../../services/listingService'
 
 const ShowListing = (props: ShowListingProps): JSX.Element => {
+  const navigate = useNavigate()
   const location = useLocation()
   const listingId = location.state.listingId
   const profileId = location.state.profileId
@@ -35,6 +37,17 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
     price: 0,
     profileId: { id: 0 }
   })
+
+  const handleDelete = async (evt: React.FormEvent): Promise<void> => {
+    evt.preventDefault()
+    try {
+      await listingService.deleteListing(listingId)
+      alert('Listing Deleted')
+      navigate('/listings')
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   useEffect((): void => {
     const fetchListing = async (): Promise<void> => {
@@ -66,13 +79,16 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
   return (
     <>
       <h1>ShowListing Component</h1>
-      {loggedInUser === listing.profileId ?
-        <Link
-          to={`/listings/${listing.id}/edit`}
-          state={listing}
-        >
-          Edit Listing
-        </Link>
+      {loggedInUser === profileId ?
+        <div id="listing-users-btns">
+          <Link
+            to={`/listings/${listing.id}/edit`}
+            state={listing}
+          >
+            <button>Edit</button>
+          </Link>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
         :
         ""
       }

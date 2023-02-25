@@ -63,6 +63,20 @@ async function getListing(listingId: number): Promise<Listing> {
   }
 }
 
+async function deleteListing(listingId: number): Promise<void> {
+  try {
+    await fetch(`${BASE_URL}/${listingId}/delete`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      },
+
+    })
+  } catch (err) {
+    throw err
+  }
+}
 
 
-export { createListing, getAllListings, editListing, getListing }
+
+export { createListing, getAllListings, editListing, getListing, deleteListing }
