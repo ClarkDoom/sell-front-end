@@ -17,7 +17,8 @@ const ProfilePage = (props: UserProps) => {
     photo: "",
     id: 0,
     createdAt: "",
-    updatedAt: ""
+    updatedAt: "",
+    listings: []
   })
 
   useEffect((): void => {
@@ -32,12 +33,19 @@ const ProfilePage = (props: UserProps) => {
     fetchProfile()
   }, [user])
 
-
   return (
     <>
       <h1>Profile Component</h1>
       <p>{profile.name}</p>
       <p>{profile.userName}</p>
+      <h2>Listings</h2>
+      {profile.listings.map(listing =>
+        <>
+          <p>{listing.itemName}</p>
+          <p>{listing.price}</p>
+
+        </>
+      )}
     </>
   );
 }

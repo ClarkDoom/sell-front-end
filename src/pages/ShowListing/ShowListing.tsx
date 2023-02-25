@@ -25,7 +25,8 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
     photo: "",
     id: 0,
     createdAt: "",
-    updatedAt: ""
+    updatedAt: "",
+    listings: []
   })
   const [listing, setListing] = useState<Listing>({
     id: 0,
