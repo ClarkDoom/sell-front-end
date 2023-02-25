@@ -27,9 +27,13 @@ const BrowseListings = () => {
     fetchListings()
   }, [])
 
+ 
+
   return (
     <>
+      <h1>BrowseListings Component</h1>
       <Search details={listings}/>
+      
       {/* <h1>BrowseListings Component</h1>
       {listings.map(listing =>
         <ListingCard listing={listing} key={listing.itemName} />

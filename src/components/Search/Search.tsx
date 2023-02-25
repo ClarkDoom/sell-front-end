@@ -17,14 +17,14 @@ function Search(props: SearchProps) {
     listing => {
       return (
         listing
-        .itemName
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) 
-        // ||
-        // listing
-        // .email
-        // .toLowerCase()
-        // .includes(searchField.toLowerCase())
+          .itemName
+          .toLowerCase()
+          .includes(searchField.toLowerCase())
+        ||
+        listing
+          .type
+          .toLowerCase()
+          .includes(searchField.toLowerCase())
       );
     }
   );
@@ -41,17 +41,28 @@ function Search(props: SearchProps) {
     );
   }
 
+  const handleCategory = (evt) => {
+    evt.preventDefault()
+    setSearchField(evt.target.value)
+  }
+
   return (
     <section>
       <div>
         <h2>Search Listings</h2>
       </div>
       <div>
-        <input 
-          type = "search" 
-          placeholder = "Search Listings" 
-          onChange = {handleChange}
+        <input
+          type="search"
+          placeholder="Search Listings"
+          onChange={handleChange}
         />
+        <h4>Categories</h4>
+        <form onClick={handleCategory}>
+          <button value="Movie">Movies</button>
+          <button value="Book">Books</button>
+          <button value="Music">Music</button>
+        </form>
       </div>
       {searchList()}
     </section>
