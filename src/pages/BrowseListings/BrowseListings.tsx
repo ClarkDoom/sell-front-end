@@ -9,6 +9,7 @@ import { Listing } from "../../types/models";
 
 // components
 import ListingCard from "../../components/ListingCard/ListingCard";
+import Search from "../../components/Search/Search";
 
 const BrowseListings = () => {
 
@@ -28,6 +29,7 @@ const BrowseListings = () => {
 
   return (
     <>
+      <Search details={listings}/>
       <h1>BrowseListings Component</h1>
       {listings.map(listing =>
         <ListingCard listing={listing} key={listing.itemName} />
