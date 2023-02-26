@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 // types
-import { ListingFormData } from "../../types/forms";
+import { ListingFormData, PhotoFormData } from "../../types/forms";
 import { CreateListingProps } from "../../types/props";
 
 // services
@@ -26,6 +26,19 @@ const CreateListing = (props: CreateListingProps) => {
     sold: false
   })
 
+  // photo experiement
+
+  const [photoData, setPhotoData] = useState<PhotoFormData>({
+    photo: null
+  })
+
+  const handleChangePhoto = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    if (evt.target.files) setPhotoData({ photo: evt.target.files.item(0) })
+  }
+
+  // end photo experiment
+
+
   const { itemName, photos, condition, description, openToTrade, price, type } = formData
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
@@ -47,7 +60,7 @@ const CreateListing = (props: CreateListingProps) => {
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     try {
-      await listingService.createListing(formData, profileId)
+      await listingService.createListing(formData, profileId, photoData)
       alert('Listing created!')
       navigate('/listings')
     } catch (err) {
@@ -68,6 +81,17 @@ const CreateListing = (props: CreateListingProps) => {
           value={itemName}
           name="itemName"
           onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="photo-upload">
+          Upload Photo
+        </label>
+        <input
+          type="file"
+          id="photo-upload"
+          name="photo"
+          onChange={handleChangePhoto}
         />
       </div>
       <div>
