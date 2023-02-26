@@ -21,7 +21,7 @@ function Search(props: SearchProps) {
     } else if(sortType === "des") {
       return b.price - a.price
     }
-    return b.price - a.price
+    return a.price - b.price
   })
 
   const filteredListings = details.filter(

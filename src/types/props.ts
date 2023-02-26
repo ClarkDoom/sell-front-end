@@ -19,7 +19,7 @@ export interface ProfileProps {
   profile: Profile,
 }
 export interface UserProps {
-  user: User
+  user: User | null
 }
 export interface EditListingProps {
   listing: Listing
