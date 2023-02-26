@@ -26,7 +26,8 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
     id: 0,
     createdAt: "",
     updatedAt: "",
-    listings: []
+    listings: [],
+    email: ""
   })
   const [listing, setListing] = useState<Listing>({
     id: 0,
@@ -81,6 +82,7 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
   return (
     <>
       <h1>ShowListing Component</h1>
+      
       {loggedInUser === profileId ?
         <div id="listing-users-btns">
           <Link
@@ -103,9 +105,14 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
         <li>{listing.type}</li>
       </ul>
       <h1>Seller</h1>
-      <p>{profile.name}</p>
-    </>
-  );
+      <a href={`mailto:${profile.email}?subject=${listing.itemName}&body=Hello, is this item still available?`}>
+        <button>Contact Seller</button>
+      </a>
+    
+
+          <p>{profile.name}</p>
+        </>
+        );
 }
 
-export default ShowListing;
+        export default ShowListing;

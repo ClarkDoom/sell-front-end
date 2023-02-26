@@ -23,7 +23,8 @@ export interface Profile {
   id: number;
   createdAt: string;
   updatedAt: string;
-  listings: Listing[]
+  listings: Listing[],
+  email: string
 }
 
 export interface User {
