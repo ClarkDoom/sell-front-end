@@ -47,6 +47,7 @@ const CreateListing = (props: CreateListingProps) => {
     evt.preventDefault()
     try {
       await listingService.createListing(formData, profileId)
+      alert('Listing created!')
       navigate('/listings')
     } catch (err) {
       console.log(err)

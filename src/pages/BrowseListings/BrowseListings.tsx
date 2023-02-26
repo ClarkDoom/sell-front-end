@@ -8,7 +8,6 @@ import * as listingService from '../../services/listingService'
 import { Listing } from "../../types/models";
 
 // components
-import ListingCard from "../../components/ListingCard/ListingCard";
 import Search from "../../components/Search/Search";
 
 const BrowseListings = () => {
@@ -26,8 +25,6 @@ const BrowseListings = () => {
     }
     fetchListings()
   }, [])
-
- 
 
   return (
     <>

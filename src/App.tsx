@@ -15,7 +15,6 @@ import CreateListing from './pages/CreateListing/CreateListing'
 import BrowseListings from './pages/BrowseListings/BrowseListings'
 import ShowListing from './pages/ShowListing/ShowListing'
 import EditListing from './pages/EditListing/EditListing'
-import ContactSeller from './pages/ContactSeller/ContactSeller'
 
 // services
 import * as authService from './services/authService'
@@ -91,14 +90,6 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <EditListing />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/listings/:id/contact"
-          element={
-            <ProtectedRoute user={user}>
-              <ContactSeller />
             </ProtectedRoute>
           }
         />
