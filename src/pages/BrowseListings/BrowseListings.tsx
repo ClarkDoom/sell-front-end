@@ -18,7 +18,8 @@ const BrowseListings = () => {
     const fetchListings = async (): Promise<void> => {
       try {
         const listingData: Listing[] = await listingService.getAllListings()
-        setListings(listingData)
+        const filteredListingData = listingData.filter(listing => { return listing.sold === false})
+        setListings(filteredListingData)
       } catch (error) {
         console.log(error)
       }
