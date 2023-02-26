@@ -13,7 +13,8 @@ export interface Listing {
   openToTrade: boolean;
   price: number;
   profileId: { id: number};
-  type: string
+  type: string,
+  sold: boolean
 }
 
 export interface Profile {

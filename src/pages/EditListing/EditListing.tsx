@@ -23,7 +23,8 @@ const EditListing = () => {
     condition: listing.condition,
     openToTrade: listing.openToTrade,
     price: listing.price,
-    type: listing.type
+    type: listing.type,
+    sold: listing.sold
   })
 
   const { itemName, photos, condition, description, openToTrade, price, type } = formData

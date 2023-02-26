@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 // types
 import { Profile, Listing } from "../../types/models";
 import { ShowListingProps } from "../../types/props";
+import { ListingFormData } from "../../types/forms";
 
 // services
 import * as profileService from '../../services/profileService'
@@ -38,7 +39,8 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
     openToTrade: false,
     price: 0,
     profileId: { id: 0 },
-    type: ''
+    type: '',
+    sold: false
   })
 
   const handleDelete = async (evt: React.FormEvent): Promise<void> => {
@@ -47,6 +49,18 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
       await listingService.deleteListing(listingId)
       alert('Listing Deleted')
       navigate('/listings')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
+  const handleMarkAsSold = async (evt: React.FormEvent): Promise<void> => {
+    evt.preventDefault()
+    try {
+      await listingService.editListing({sold: true}, listing.id)
+      alert("Listing marked as sold")
+      navigate(`/listings`)
     } catch (err) {
       console.log(err)
     }
@@ -82,7 +96,7 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
   return (
     <>
       <h1>ShowListing Component</h1>
-      
+
       {loggedInUser === profileId ?
         <div id="listing-users-btns">
           <Link
@@ -92,6 +106,7 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
             <button>Edit</button>
           </Link>
           <button onClick={handleDelete}>Delete</button>
+          <button onClick={handleMarkAsSold}>Mark Sold</button>
         </div>
         :
         ""
@@ -103,16 +118,17 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
         <li>{listing.openToTrade ? 'Willing to Trade' : 'Not Willing to Trade'}</li>
         <li>{listing.price}</li>
         <li>{listing.type}</li>
+        <li>Sold? {listing.sold ? "true" : "false"}</li>
       </ul>
       <h1>Seller</h1>
       <a href={`mailto:${profile.email}?subject=${listing.itemName}&body=Hello, is this item still available?`}>
         <button>Contact Seller</button>
       </a>
-    
 
-          <p>{profile.name}</p>
-        </>
-        );
+
+      <p>{profile.name}</p>
+    </>
+  );
 }
 
-        export default ShowListing;
+export default ShowListing;

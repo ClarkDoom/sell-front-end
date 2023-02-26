@@ -5,7 +5,9 @@ import * as tokenService from './tokenService'
 import { Listing } from '../types/models'
 
 // types
-import { ListingFormData } from '../types/forms'
+import { ListingFormData, MarkAsSold } from '../types/forms'
+
+
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/listings`
 
@@ -38,7 +40,7 @@ async function getAllListings(): Promise<Listing[]> {
   }
 }
 
-async function editListing(formData: ListingFormData, listingId: number): Promise<Listing> {
+async function editListing(formData: ListingFormData | MarkAsSold, listingId: number): Promise<Listing> {
   try {
     const res = await fetch(`${BASE_URL}/${listingId}/edit`, {
       method: 'PATCH',

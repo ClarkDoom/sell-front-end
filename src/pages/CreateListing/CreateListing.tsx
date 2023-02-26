@@ -23,6 +23,7 @@ const CreateListing = (props: CreateListingProps) => {
     openToTrade: checked,
     price: 0,
     type: '',
+    sold: false
   })
 
   const { itemName, photos, condition, description, openToTrade, price, type } = formData

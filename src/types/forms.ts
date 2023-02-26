@@ -12,6 +12,11 @@ export interface ListingFormData {
   openToTrade: boolean;
   price: number;
   type: string;
+  sold: boolean;
+}
+
+export interface MarkAsSold {
+  sold: boolean
 }
 
 export interface LoginFormData {
