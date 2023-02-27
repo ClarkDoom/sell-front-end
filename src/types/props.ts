@@ -4,11 +4,11 @@ import { Listing, Profile, User } from "../types/models";
 /* ---------======= custom props ======--------- */
 
 export interface CreateListingProps {
-  profileId: number
+  profileId: number 
 }
 
 export interface ShowListingProps {
-  loggedInUser: number
+  loggedInUser: number | undefined
 }
 
 export interface ListingProps {
@@ -16,7 +16,7 @@ export interface ListingProps {
 }
 
 export interface ProfileProps {
-  profile: Profile,
+  // profile: Profile,
   user: User | null,
   handleLogout: () => void;
 }
