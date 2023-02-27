@@ -47,7 +47,7 @@ const ProfilePage = (props: ProfileProps) => {
       </div>
       <img src={profile.photo} alt="" />
       <h2>Name: {profile.name}</h2>
-      <h2>UserName: {profile.userName}</h2>
+      <h2>User Name: {profile.userName}</h2>
       <h3>Listings</h3>
       {profile.listings.map(listing =>
         <ListingCard listing={listing} key={listing.itemName} />

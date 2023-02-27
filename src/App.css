@@ -380,10 +380,77 @@ nav {
   padding: 10px;
   width: 100%;
   text-decoration: none;
-  
 }
 
+/* show listing  */
 
+.show-listing-page {
+  display: flex;
+  flex-direction: column;
+}
+#listing-img {
+  width: 80%;
+  border-radius: 20px;
+}
+#profile-img {
+  width: 50%;
+  border-radius: 20px;
+}
+
+.listing-details {
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 20px;
+  border: 2px solid white;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.listing-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, .1);
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.name-and-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-users-btns {
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+}
+
+#listing-users-btn {
+  background-color: black;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  outline: 0;
+  text-align: center;
+  padding: 10px;
+  width: 30%;
+  text-decoration: none;
+  margin: 3px;
+}
 
 
 
