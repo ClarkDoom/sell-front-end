@@ -229,16 +229,17 @@ nav {
   border: 2px solid white;
   border-radius: 20px;
   align-content: center;
+  padding: 10px;
 }
 
 .listing-card img {
-  padding: 20px;
   border-radius: 10px;
   width: 20%;
   height: 20%;
   justify-self: flex-start;
   align-self: center;
   flex-grow: 1;
+  border: 1px solid white;
 }
 
 .listing-card-details {
@@ -276,7 +277,7 @@ nav {
 
 .search-component-actions {
   background-color: rgba(255, 255, 255, .1);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px;
   border: 2px solid white;
   margin: 10px;
