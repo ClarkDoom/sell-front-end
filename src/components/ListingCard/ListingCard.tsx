@@ -9,7 +9,7 @@ const ListingCard = (props: ListingProps): JSX.Element => {
   return (
     <>
       <h1>ListingCard Component</h1>
-      <img src={listing?.photos} alt="" />
+      <img src={listing!.photos} alt="" />
       <p>{listing.itemName}</p>
       <p>{listing.price}</p>
       <Link 
