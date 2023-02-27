@@ -7,7 +7,7 @@
 export interface Listing {
   id: number;
   itemName: string;
-  photos: string;
+  photos?: string[];
   description: string;
   condition: string;
   openToTrade: boolean;

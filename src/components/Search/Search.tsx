@@ -52,16 +52,24 @@ function Search(props: SearchProps) {
     );
   }
 
-  const handleCategory = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCategory = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
-    setSearchField(evt.target.value)
+    const target = evt.target as HTMLTextAreaElement
+    setSearchField(target.value)
   }
+  
+  // way I had it 
+  // const handleCategory = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  //   evt.preventDefault()
+  //   setSearchField(evt.target.value)
+  // }
 
-  const handleSort = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSort = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
-    if(evt.target.value === "asc") {
+    const target = evt.target as HTMLTextAreaElement
+    if(target.value === "asc") {
       setSortType("asc")
-    } else if(evt.target.value === "des") {
+    } else if(target.value === "des") {
       setSortType("des")
     }
   }

@@ -60,7 +60,7 @@ const CreateListing = (props: CreateListingProps) => {
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     try {
-      await listingService.createListing(formData, profileId, photoData)
+      await listingService.createListing(formData, profileId!, photoData)
       alert('Listing created!')
       navigate('/listings')
     } catch (err) {

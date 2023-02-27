@@ -29,7 +29,7 @@ const ProfilePage = (props: ProfileProps) => {
   useEffect((): void => {
     const fetchProfile = async (): Promise<void> => {
       try {
-        const profileData: Profile = await profileService.getProfile(user.profile.id)
+        const profileData: Profile = await profileService.getProfile(user!.profile.id)
         setProfile(profileData)
       } catch (error) {
         console.log(error)

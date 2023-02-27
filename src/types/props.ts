@@ -4,7 +4,7 @@ import { Listing, Profile, User } from "../types/models";
 /* ---------======= custom props ======--------- */
 
 export interface CreateListingProps {
-  profileId: number 
+  profileId: number | undefined
 }
 
 export interface ShowListingProps {
