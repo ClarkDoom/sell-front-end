@@ -1,8 +1,6 @@
 // types
 import { Listing, Profile, User } from "../types/models";
 
-/* ---------======= custom props ======--------- */
-
 export interface CreateListingProps {
   profileId: number | undefined
 }
@@ -24,8 +22,6 @@ export interface ProfileProps {
 export interface EditListingProps {
   listing: Listing
 }
-
-/* ---------===== auth form props =====--------- */
 
 export interface AuthFormProps {
   handleAuthEvt: () => void;

@@ -14,7 +14,7 @@ import { ChangePasswordFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
 
 const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
-  const {updateMessage, handleAuthEvt} = props
+  const { updateMessage, handleAuthEvt } = props
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState<ChangePasswordFormData>({

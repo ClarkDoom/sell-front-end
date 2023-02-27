@@ -52,7 +52,6 @@ function Search(props: SearchProps) {
 
   const handleCategory = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
-    console.log(evt)
     const target = evt.target as HTMLImageElement
     setSearchField(target.className)
   }
@@ -60,7 +59,6 @@ function Search(props: SearchProps) {
   const handleSort = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
     const target = evt.target as HTMLImageElement
-    console.log(target)
     if (target.alt === "asc") {
       setSortType("asc")
     } else if (target.alt === "des") {

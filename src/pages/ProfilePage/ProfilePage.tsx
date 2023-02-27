@@ -46,8 +46,8 @@ const ProfilePage = (props: ProfileProps) => {
         <Link id="change-password" to="/change-password">Change Password</Link>
       </div>
       <img src={profile.photo} alt="" />
-      <h2>Name: {profile.name}</h2>
-      <h2>User Name: {profile.userName}</h2>
+      <h2>{profile.name}</h2>
+      <h2>@{profile.userName}</h2>
       <h3>Listings</h3>
       {profile.listings.map(listing =>
         <ListingCard listing={listing} key={listing.itemName} />

@@ -1,3 +1,5 @@
+// will implement at future date
+
 import React from 'react';
 
 interface ScrollProps {
@@ -5,10 +7,10 @@ interface ScrollProps {
 }
 
 const Scroll = (props: ScrollProps) => {
-  return( 
-    <div style={{overflowY: 'scroll', height:'70vh'}}>
+  return (
+    <div style={{ overflowY: 'scroll', height: '70vh' }}>
       {props.children}
-    </div>	
+    </div>
   );
 }
 

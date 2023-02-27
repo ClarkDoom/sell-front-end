@@ -1,9 +1,3 @@
-/* ---------===== custom props ====--------- */
-
-
-
-/* ---------===== auth models =====--------- */
-
 export interface Listing {
   id: number;
   itemName: string;

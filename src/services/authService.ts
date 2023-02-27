@@ -3,7 +3,7 @@ import * as tokenService from './tokenService'
 import { addPhoto as addProfilePhoto } from './profileService'
 
 // types
-import { 
+import {
   ChangePasswordFormData,
   LoginFormData,
   SignupFormData,
@@ -14,7 +14,7 @@ import { User } from '../types/models'
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/auth`
 
 async function signup(
-  formData: SignupFormData, 
+  formData: SignupFormData,
   photoFormData: PhotoFormData,
 ): Promise<void> {
   try {

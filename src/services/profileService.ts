@@ -9,7 +9,7 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/profiles`
 async function getProfile(profileId: number): Promise<Profile> {
   try {
     const res = await fetch(`${BASE_URL}/${profileId}`, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } 
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return await res.json() as Profile
   } catch (error) {
@@ -29,7 +29,7 @@ async function getAllProfiles(): Promise<Profile[]> {
 }
 
 async function addPhoto(
-  photoData: FormData, 
+  photoData: FormData,
   profileId: number
 ): Promise<string> {
   try {

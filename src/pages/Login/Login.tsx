@@ -8,7 +8,7 @@ import LoginForm from '../../components/LoginForm/LoginForm'
 // types
 interface LoginPageProps {
   handleAuthEvt: () => void;
-} 
+}
 
 const LoginPage = (props: LoginPageProps): JSX.Element => {
   const [message, setMessage] = useState('')

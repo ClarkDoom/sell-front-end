@@ -22,9 +22,13 @@ const Landing = (props: LandingProps): JSX.Element => {
           <h1>Welcome to SELL</h1>
           <h3>A place to put your used media on the market!</h3>
           <p>Create your first listing.</p>
-          <button className="home-link">Create Listing</button>
+          <Link to="/listings/create">
+            <button className="home-link">Create Listing</button>
+          </Link>
           <p>Or check out posted listings.</p>
-          <button className="home-link">Browse Listings</button>
+          <Link to="/listings">
+            <button className="home-link">Browse Listings</button>
+          </Link>
         </>
         :
         <div className="home-btns">

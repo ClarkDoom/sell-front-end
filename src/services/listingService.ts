@@ -105,6 +105,4 @@ async function addPhoto(
   }
 }
 
-
-
 export { createListing, getAllListings, editListing, getListing, deleteListing, addPhoto }

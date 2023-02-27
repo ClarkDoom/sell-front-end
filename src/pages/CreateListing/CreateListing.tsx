@@ -170,7 +170,7 @@ const CreateListing = (props: CreateListingProps) => {
 
 
         <div className="photo-trade">
-            <h3>Upload Photo</h3>
+          <h3>Upload Photo</h3>
           <div className="input-container ic2" id="photo-upload">
             <input
               type="file"
@@ -179,10 +179,10 @@ const CreateListing = (props: CreateListingProps) => {
               onChange={handleChangePhoto}
             />
           </div>
-          </div>
+        </div>
 
-          <div className="photo-trade">
-            <h3>Willing to Trade</h3>
+        <div className="photo-trade">
+          <h3>Willing to Trade</h3>
           <div className="input-container ic2">
             <input
               type="checkbox"

@@ -1,9 +1,3 @@
-/* ---------==== custom forms ====--------- */
-
-
-
-/* ---------===== auth forms =====--------- */
-
 export interface ListingFormData {
   itemName: string;
   photos: string[];
@@ -42,5 +36,5 @@ export interface PhotoFormData {
   photo: File | null;
 }
 export interface MultiplePhotoFormData {
-  photos: File | null ;
+  photos: File | null;
 }

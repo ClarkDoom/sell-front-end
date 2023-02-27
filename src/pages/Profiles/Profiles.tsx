@@ -22,7 +22,7 @@ const Profiles = (): JSX.Element => {
     fetchProfiles()
   }, [])
 
-  if(!profiles.length) return <p>No profiles yet</p>
+  if (!profiles.length) return <p>No profiles yet</p>
 
   return (
     <>
@@ -33,5 +33,5 @@ const Profiles = (): JSX.Element => {
     </>
   )
 }
- 
+
 export default Profiles

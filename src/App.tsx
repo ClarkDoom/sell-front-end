@@ -48,7 +48,7 @@ function App(): JSX.Element {
         <Route
           path="/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
-        /> 
+        />
         <Route
           path="/login"
           element={<Login handleAuthEvt={handleAuthEvt} />}
@@ -65,7 +65,7 @@ function App(): JSX.Element {
           path="/profile"
           element={
             <ProtectedRoute user={user}>
-              <ProfilePage user={user} handleLogout={handleLogout}/>
+              <ProfilePage user={user} handleLogout={handleLogout} />
             </ProtectedRoute>
           }
         />
@@ -81,7 +81,7 @@ function App(): JSX.Element {
           path="/listings/:id"
           element={
             <ProtectedRoute user={user}>
-              <ShowListing loggedInUser={user?.profile.id}/>
+              <ShowListing loggedInUser={user?.profile.id} />
             </ProtectedRoute>
           }
         />
@@ -105,12 +105,12 @@ function App(): JSX.Element {
           path="/listings/create"
           element={
             <ProtectedRoute user={user}>
-              <CreateListing profileId={user?.profile.id}/>
+              <CreateListing profileId={user?.profile.id} />
             </ProtectedRoute>
           }
         />
       </Routes>
-      
+
     </div>
   )
 }

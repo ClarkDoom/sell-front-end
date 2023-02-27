@@ -95,16 +95,16 @@ const EditListing = () => {
         </div>
 
         <div>
-        <label htmlFor="photo-upload">
-          Upload Another Photo
-        </label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
-      </div>
+          <label htmlFor="photo-upload">
+            Upload Another Photo
+          </label>
+          <input
+            type="file"
+            id="photo-upload"
+            name="photo"
+            onChange={handleChangePhoto}
+          />
+        </div>
 
         <div>
           <label htmlFor="condition">Condition</label>

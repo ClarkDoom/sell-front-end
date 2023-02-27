@@ -65,7 +65,8 @@ nav {
 /* home page  */
 .home-page {
   font-family: 'Manrope', sans-serif;
-  text-align: center;;
+  text-align: center;
+  ;
   border-radius: 10px;
   padding: 10px;
 }
@@ -74,7 +75,7 @@ nav {
   border-radius: 20px;
   padding: 10px;
   font-family: 'Manrope', sans-serif;
-  font-weight:600;
+  font-weight: 600;
   background-color: transparent;
   color: white;
   border: 2px solid white;
@@ -178,8 +179,8 @@ nav {
   width: 50px;
 }
 
-.input:focus ~ .cut,
-.input:not(:placeholder-shown) ~ .cut {
+.input:focus~.cut,
+.input:not(:placeholder-shown)~.cut {
   transform: translateY(8px);
 }
 
@@ -195,16 +196,16 @@ nav {
   top: 20px;
 }
 
-.input:focus ~ .placeholder,
-.input:not(:placeholder-shown) ~ .placeholder {
+.input:focus~.placeholder,
+.input:not(:placeholder-shown)~.placeholder {
   transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
-.input:not(:placeholder-shown) ~ .placeholder {
+.input:not(:placeholder-shown)~.placeholder {
   color: white;
 }
 
-.input:focus ~ .placeholder {
+.input:focus~.placeholder {
   color: white;
 }
 
@@ -246,7 +247,7 @@ nav {
 .listing-card {
   display: flex;
   margin: 10px;
-  background-color: rgba(255,255,255,.1);
+  background-color: rgba(255, 255, 255, .1);
   border: 2px solid white;
   border-radius: 20px;
   align-content: center;
@@ -269,6 +270,7 @@ nav {
   justify-self: flex-end;
   align-self: center;
 }
+
 .listing-card-details h1 {
   font-size: medium;
 }
@@ -288,6 +290,7 @@ nav {
   text-align: center;
   padding: 10px;
 }
+
 .listing-card-details button:active {
   background-color: white;
   color: black;
@@ -304,11 +307,12 @@ nav {
   border: 2px solid white;
   margin: 10px;
 }
+
 .search-component-actions input {
   background-color: black;
   color: white;
   border-radius: 10px;
-  padding:10px;
+  padding: 10px;
   border: 2px solid white;
 }
 
@@ -318,12 +322,15 @@ nav {
   color: white;
   border: 0px;
 }
+
 #search-component-button:active {
   transform: translateY(4px);
 }
+
 .search-component img {
   width: 50%;
 }
+
 #search-reset-button {
   margin-top: 10px;
   background-color: transparent;
@@ -331,9 +338,11 @@ nav {
   color: white;
   border: 0px
 }
+
 #search-reset-button:active {
   transform: translateY(4px);
 }
+
 .sort-icons {
   display: flex;
   flex-direction: row;
@@ -365,7 +374,8 @@ nav {
   margin-top: 30px;
 }
 
-#log-out, #change-password {
+#log-out,
+#change-password {
   background-color: black;
   font-family: 'Manrope', sans-serif;
   font-weight: bold;
@@ -388,10 +398,12 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
 #listing-img {
   width: 80%;
   border-radius: 20px;
 }
+
 #profile-img {
   width: 50%;
   border-radius: 20px;
@@ -452,13 +464,12 @@ nav {
   margin: 3px;
 }
 
-
-
 @media screen and (max-width: 575px) {
   .nav-btn {
     display: block;
   }
 }
+
 @media screen and (min-width: 575px) {
   #app-img {
     width: 10%;
@@ -466,4 +477,3 @@ nav {
     margin-top: 20px;
   }
 }
-
