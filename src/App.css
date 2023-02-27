@@ -294,7 +294,10 @@ nav {
   background-color: transparent;
   width: 30%;
   color: white;
-  border: 0px
+  border: 0px;
+}
+#search-component-button:active {
+  transform: translateY(4px);
 }
 .search-component img {
   width: 50%;
@@ -305,6 +308,9 @@ nav {
   width: 30%;
   color: white;
   border: 0px
+}
+#search-reset-button:active {
+  transform: translateY(4px);
 }
 .sort-icons {
   display: flex;

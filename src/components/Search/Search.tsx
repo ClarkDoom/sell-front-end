@@ -52,9 +52,9 @@ function Search(props: SearchProps) {
 
   const handleCategory = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
+    console.log(evt)
     const target = evt.target as HTMLImageElement
-    console.log("evt", evt)
-    setSearchField(target.alt)
+    setSearchField(target.className)
   }
 
   const handleSort = (evt: React.MouseEvent<HTMLButtonElement>) => {
@@ -78,16 +78,16 @@ function Search(props: SearchProps) {
         />
 
         <h4>Categories</h4>
-        <button onClick={handleCategory} value="Movie" id="search-component-button">
-          <img src="/dvd.png" alt="Movie" />
+        <button className="Movie" onClick={handleCategory} value="Movie" id="search-component-button">
+          <img className="Movie" src="/dvd.png" alt="Movie" />
         </button>
-        <button onClick={handleCategory} value="Book" id="search-component-button">
-          <img src="/books.png" alt="Book" />
+        <button className="Book" onClick={handleCategory} value="Book" id="search-component-button">
+          <img className="Book" src="/books.png" alt="Book" />
         </button>
-        <button onClick={handleCategory} value="Music" id="search-component-button">
-          <img src="/music.png" alt="Music" />
+        <button className="Music" onClick={handleCategory} value="Music" id="search-component-button">
+          <img className="Music" src="/music.png" alt="Music" />
         </button>
-        <button onClick={handleCategory} value="" id="search-reset-button">
+        <button className="" onClick={handleCategory} value="" id="search-reset-button">
           <img src="/reset.png" alt="" />
         </button>
 
