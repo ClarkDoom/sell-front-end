@@ -272,6 +272,53 @@ nav {
   border: 2px solid black;
 }
 
+/* search  */
+
+.search-component-actions {
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid white;
+  margin: 10px;
+}
+.search-component-actions input {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding:10px;
+  border: 2px solid white;
+}
+
+#search-component-button {
+  background-color: transparent;
+  width: 30%;
+  color: white;
+  border: 0px
+}
+.search-component img {
+  width: 50%;
+}
+#search-reset-button {
+  margin-top: 10px;
+  background-color: transparent;
+  width: 30%;
+  color: white;
+  border: 0px
+}
+.sort-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sort-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
 @media screen and (max-width: 575px) {
   .nav-btn {
     display: block;

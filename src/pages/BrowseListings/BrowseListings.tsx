@@ -29,7 +29,7 @@ const BrowseListings = () => {
 
   return (
     <>
-      <h1>BrowseListings Component</h1>
+      <h1>Browse Listings</h1>
       <Search details={listings}/>
       
       {/* <h1>BrowseListings Component</h1>

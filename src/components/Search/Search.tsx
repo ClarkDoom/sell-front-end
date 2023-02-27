@@ -15,10 +15,10 @@ function Search(props: SearchProps) {
 
   const [sortType, setSortType] = useState("asc")
 
-  details.sort((a,b) => {
-    if(sortType === "asc") {
+  details.sort((a, b) => {
+    if (sortType === "asc") {
       return a.price - b.price
-    } else if(sortType === "des") {
+    } else if (sortType === "des") {
       return b.price - a.price
     }
     return a.price - b.price
@@ -46,56 +46,64 @@ function Search(props: SearchProps) {
 
   function searchList() {
     return (
-      <Scroll>
         <SearchList filteredListings={filteredListings} />
-      </Scroll>
     );
   }
 
   const handleCategory = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
-    const target = evt.target as HTMLTextAreaElement
-    setSearchField(target.value)
+    const target = evt.target as HTMLImageElement
+    console.log("evt", evt)
+    setSearchField(target.alt)
   }
-  
-  // way I had it 
-  // const handleCategory = (evt: React.ChangeEvent<HTMLInputElement>) => {
-  //   evt.preventDefault()
-  //   setSearchField(evt.target.value)
-  // }
 
   const handleSort = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
-    const target = evt.target as HTMLTextAreaElement
-    if(target.value === "asc") {
+    const target = evt.target as HTMLImageElement
+    console.log(target)
+    if (target.alt === "asc") {
       setSortType("asc")
-    } else if(target.value === "des") {
+    } else if (target.alt === "des") {
       setSortType("des")
     }
   }
 
   return (
-    <section>
-      <div>
-        <h2>Search Listings</h2>
-      </div>
-      <div>
+    <div className="search-component">
+      <div className="search-component-actions">
         <input
           type="search"
           placeholder="Search Listings"
           onChange={handleChange}
         />
+
         <h4>Categories</h4>
-          <button onClick={handleCategory} value="Movie">Movies</button>
-          <button onClick={handleCategory} value="Book">Books</button>
-          <button onClick={handleCategory} value="Music">Music</button>
-          <button onClick={handleCategory} value="">Reset</button>
-        <h4>Sort</h4>
-        <button onClick={handleSort} value={"asc"}>Sort Ascending</button>
-        <button onClick={handleSort} value={"des"}>Sort Descending</button>
+        <button onClick={handleCategory} value="Movie" id="search-component-button">
+          <img src="/dvd.png" alt="Movie" />
+        </button>
+        <button onClick={handleCategory} value="Book" id="search-component-button">
+          <img src="/books.png" alt="Book" />
+        </button>
+        <button onClick={handleCategory} value="Music" id="search-component-button">
+          <img src="/music.png" alt="Music" />
+        </button>
+        <button onClick={handleCategory} value="" id="search-reset-button">
+          <img src="/reset.png" alt="" />
+        </button>
+
+        <h4>Sort by Price</h4>
+        <div className="sort-icons">
+          <button onClick={handleSort} value={"asc"} className="sort-icon" id="search-component-button">
+            <img src="/arrow-up.png" alt="asc" />
+          </button>
+            <button onClick={handleSort} value={"des"} className="sort-icon" id="search-component-button">
+              <img src="/arrow-down.png" alt="des" />
+            </button>
+        </div>
+
       </div>
       {searchList()}
-    </section>
+    </div>
   );
 }
 

@@ -9,8 +9,8 @@ const ListingCard = (props: ListingProps): JSX.Element => {
   return (
     <div className="listing-card">
 
-      {listing.photos?.map(photo =>
-        <img src={photo} alt="" />
+      {listing.photos?.map((photo, idx) =>
+        <img key={idx} src={photo} alt="" />
       )}
       <div className="listing-card-details">
         <h1>{listing.itemName}</h1>
