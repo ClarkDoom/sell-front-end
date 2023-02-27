@@ -7,7 +7,7 @@ import { useState } from "react";
 import * as listingService from '../../services/listingService'
 
 // types 
-import { ListingFormData } from "../../types/forms";
+import { ListingFormData, PhotoFormData } from "../../types/forms";
 
 const EditListing = () => {
   const location = useLocation()
@@ -26,6 +26,18 @@ const EditListing = () => {
     type: listing.type,
     sold: listing.sold
   })
+
+  // photo experiment
+  const [photoData, setPhotoData] = useState<PhotoFormData>({
+    photo: null
+  })
+
+  const handleChangePhoto = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    if (evt.target.files) setPhotoData({ photo: evt.target.files.item(0) })
+  }
+
+  // end photo experiment
+
 
   const { itemName, photos, condition, description, openToTrade, price, type } = formData
 
@@ -81,6 +93,18 @@ const EditListing = () => {
             onChange={handleChange}
           />
         </div>
+
+        <div>
+        <label htmlFor="photo-upload">
+          Upload Another Photo
+        </label>
+        <input
+          type="file"
+          id="photo-upload"
+          name="photo"
+          onChange={handleChangePhoto}
+        />
+      </div>
 
         <div>
           <label htmlFor="condition">Condition</label>

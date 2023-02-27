@@ -42,7 +42,7 @@ function App(): JSX.Element {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -65,7 +65,7 @@ function App(): JSX.Element {
           path="/profile"
           element={
             <ProtectedRoute user={user}>
-              <ProfilePage user={user}/>
+              <ProfilePage user={user} handleLogout={handleLogout}/>
             </ProtectedRoute>
           }
         />
@@ -110,6 +110,7 @@ function App(): JSX.Element {
           }
         />
       </Routes>
+      
     </>
   )
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // types
 import { Profile } from "../../types/models";
-import { UserProps } from "../../types/props";
+import { ProfileProps } from "../../types/props";
 
 // services
 import * as profileService from '../../services/profileService'
@@ -12,12 +12,13 @@ import * as profileService from '../../services/profileService'
 // components
 import ListingCard from "../../components/ListingCard/ListingCard";
 
-const ProfilePage = (props: UserProps) => {
-  const { user } = props
+const ProfilePage = (props: ProfileProps) => {
+  const { user, handleLogout } = props
 
   const [profile, setProfile] = useState<Profile>({
     name: "",
     userName: "",
+    email: '',
     photo: "",
     id: 0,
     createdAt: "",
@@ -40,6 +41,9 @@ const ProfilePage = (props: UserProps) => {
   return (
     <>
       <h1>Profile Component</h1>
+      <button onClick={handleLogout}>Log Out</button>
+      
+      <Link to="/change-password"><button>Change Password</button></Link>
       <p>{profile.name}</p>
       <p>{profile.userName}</p>
       <h2>Listings</h2>

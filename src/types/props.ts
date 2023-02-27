@@ -17,10 +17,10 @@ export interface ListingProps {
 
 export interface ProfileProps {
   profile: Profile,
+  user: User | null,
+  handleLogout: () => void;
 }
-export interface UserProps {
-  user: User | null
-}
+
 export interface EditListingProps {
   listing: Listing
 }
