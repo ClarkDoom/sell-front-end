@@ -112,7 +112,6 @@ nav {
   margin-top: 10px;
 }
 
-
 .input-container {
   height: 50px;
   position: relative;
@@ -271,6 +270,7 @@ nav {
   background-color: white;
   color: black;
   border: 2px solid black;
+  transform: translateY(4px);
 }
 
 /* search  */
@@ -324,6 +324,45 @@ nav {
   align-items: center;
   text-align: center;
 }
+
+/* profile page  */
+
+.profile-page {
+  align-content: center;
+}
+
+.profile-btns {
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+}
+
+.profile-page img {
+  width: 30%;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+#log-out, #change-password {
+  background-color: black;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  outline: 0;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  text-decoration: none;
+  
+}
+
+
+
 
 
 @media screen and (max-width: 575px) {

@@ -39,18 +39,20 @@ const ProfilePage = (props: ProfileProps) => {
   }, [user])
 
   return (
-    <>
-      <h1>Profile Component</h1>
-      <button onClick={handleLogout}>Log Out</button>
-      
-      <Link to="/change-password"><button>Change Password</button></Link>
-      <p>{profile.name}</p>
-      <p>{profile.userName}</p>
-      <h2>Listings</h2>
+    <div className="profile-page">
+      <h1>Profile</h1>
+      <div className="profile-btns">
+        <button id="log-out" onClick={handleLogout}>Log Out</button>
+        <Link id="change-password" to="/change-password">Change Password</Link>
+      </div>
+      <img src={profile.photo} alt="" />
+      <h2>Name: {profile.name}</h2>
+      <h2>UserName: {profile.userName}</h2>
+      <h3>Listings</h3>
       {profile.listings.map(listing =>
-        <ListingCard listing={listing} key={listing.itemName}/>
+        <ListingCard listing={listing} key={listing.itemName} />
       )}
-    </>
+    </div>
   );
 }
 
