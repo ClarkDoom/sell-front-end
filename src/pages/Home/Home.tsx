@@ -27,10 +27,10 @@ const Landing = (props: LandingProps): JSX.Element => {
           <button className="home-link">Browse Listings</button>
         </>
         :
-        <>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Log In</Link>
-        </>
+        <div className="home-btns">
+          <Link className="home-btn" to="/signup">Sign Up</Link>
+          <Link className="home-btn" to="/login">Log In</Link>
+        </div>
 
       }
     </div>

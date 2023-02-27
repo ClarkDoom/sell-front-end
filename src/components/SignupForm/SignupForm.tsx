@@ -5,16 +5,13 @@ import { Link, useNavigate } from 'react-router-dom'
 // services
 import * as authService from '../../services/authService'
 
-// stylesheets
-import styles from './SignupForm.module.css'
-
 // types
 import { AuthFormProps } from '../../types/props'
 import { SignupFormData, PhotoFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
 
 const SignupForm = (props: AuthFormProps): JSX.Element => {
-  const {updateMessage, handleAuthEvt} = props
+  const { updateMessage, handleAuthEvt } = props
   const navigate = useNavigate()
 
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -40,7 +37,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
 
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
-    if(isSubmitted) return
+    if (isSubmitted) return
     try {
       setIsSubmitted(true)
       await authService.signup(formData, photoData)
@@ -60,90 +57,121 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
   }
 
   return (
+
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+      <div className="title">Welcome</div>
+      <div className="subtitle">Signup for Sell!</div>
+
+      <div className="input-container ic1">
         <input
+          className="input"
+          placeholder=" "
           type="text"
           id="name"
           value={name}
           name="name"
           onChange={handleChange}
         />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="name"
+        >Name</label>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="userName" className={styles.label}>User Name</label>
+
+      <div className="input-container ic2">
         <input
+          className="input"
+          placeholder=" "
           type="text"
           id="userName"
           value={userName}
           name="userName"
           onChange={handleChange}
+          autoComplete="off"
+
         />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="userName">User name</label>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>
-          Email
-        </label>
+
+      <div className="input-container ic2">
         <input
+          className="input"
+          placeholder=" "
           type="text"
           id="email"
           value={email}
           name="email"
           onChange={handleChange}
         />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="email">Email</label>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>
-          Password
-        </label>
+
+      <div className="input-container ic2">
         <input
+          className="input"
+          placeholder=" "
           type="password"
           id="password"
           value={password}
           name="password"
           onChange={handleChange}
+          autoComplete="off"
         />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="password">Password</label>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
-          Confirm Password
-        </label>
+
+      <div className="input-container ic2">
         <input
+          className="input"
+          placeholder=" "
           type="password"
           id="confirm"
           value={passwordConf}
           name="passwordConf"
           onChange={handleChange}
         />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="confirm">Confirm Password</label>
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="photo-upload" className={styles.label}>
-          Upload Photo
-        </label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
+
+      <div className="photo-trade">
+        <h3>Upload Profile Photo</h3>
+        <div className="input-container ic2" id="photo-upload">
+          <input
+            type="file"
+            id="photo-upload"
+            name="photo"
+            onChange={handleChangePhoto}
+          />
+        </div>
       </div>
-      <div className={styles.inputContainer}>
-        <button 
+
+      <button 
           disabled={isFormInvalid() || isSubmitted} 
-          className={styles.button}
+          className="submit"
         >
           {!isSubmitted ? "Sign Up" : "🚀 Sending..."}
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className="submit">Cancel</button>
         </Link>
-      </div>
     </form>
+
   )
 }
 

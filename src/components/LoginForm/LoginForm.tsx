@@ -14,7 +14,7 @@ import { LoginFormData } from '../../types/forms'
 import { handleErrMsg } from '../../types/validators'
 
 const LoginForm = (props: AuthFormProps): JSX.Element => {
-  const {updateMessage, handleAuthEvt} = props
+  const { updateMessage, handleAuthEvt } = props
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState<LoginFormData>({
@@ -51,7 +51,46 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
       onSubmit={handleSubmit}
       className={styles.container}
     >
-      <div className={styles.inputContainer}>
+
+      <div className="input-container ic2">
+        <input
+          className="input"
+          placeholder=" "
+          type="text"
+          id="email"
+          value={formData.email}
+          name="email"
+          onChange={handleChange}
+        />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="email">Email</label>
+      </div>
+
+
+      <div className="input-container ic2">
+        <input
+          className="input"
+          placeholder=" "
+          type="password"
+          id="password"
+          value={formData.password}
+          name="password"
+          onChange={handleChange}
+        />
+        <div className="cut"></div>
+        <label
+          className="placeholder"
+          htmlFor="password">Password</label>
+      </div>
+
+
+
+
+
+
+      {/* <div className={styles.inputContainer}>
         <label htmlFor="email" className={styles.label}>Email</label>
         <input
           type="text"
@@ -60,8 +99,8 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
           name="email"
           onChange={handleChange}
         />
-      </div>
-      <div className={styles.inputContainer}>
+      </div> */}
+      {/* <div className={styles.inputContainer}>
         <label htmlFor="password" className={styles.label}>Password</label>
         <input
           type="password"
@@ -70,13 +109,13 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
           name="password"
           onChange={handleChange}
         />
-      </div>
-      <div>
-        <button disabled={isFormInvalid()} className={styles.button}>
+      </div> */}
+      <div className="login-btns">
+        <button className="submit" disabled={isFormInvalid()}>
           Log In
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className="submit">Cancel</button>
         </Link>
       </div>
     </form>
