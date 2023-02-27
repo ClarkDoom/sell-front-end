@@ -7,21 +7,25 @@ const ListingCard = (props: ListingProps): JSX.Element => {
   const { listing } = props
 
   return (
-    <>
-      <h1>ListingCard Component</h1>
-      {listing.photos?.map(photo => 
-      <img src={photo} alt="" />
-        )}
-      <p>{listing.itemName}</p>
-      <p>{listing.price}</p>
-      <Link 
-        to={`/listings/${listing.id}`}
-        state={{listingId: listing.id, profileId: listing.profileId}}
-      >
-        More Details
-      </Link>
+    <div className="listing-card">
 
-    </>
+      {listing.photos?.map(photo =>
+        <img src={photo} alt="" />
+      )}
+      <div className="listing-card-details">
+        <h1>{listing.itemName}</h1>
+        <p>${listing.price}.00</p>
+        <Link
+          to={`/listings/${listing.id}`}
+          state={{ listingId: listing.id, profileId: listing.profileId }}
+        >
+          <button>
+            More Details
+          </button>
+        </Link>
+      </div>
+
+    </div>
   );
 }
 
