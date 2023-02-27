@@ -15,7 +15,7 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
 
   return (
-    <nav>
+    <div>
       <h1>hello, {user ? user.name : 'friend'}</h1>
       {user ?
         <>
@@ -29,7 +29,7 @@ const Landing = (props: LandingProps): JSX.Element => {
         </>
 
       }
-    </nav>
+    </div>
   )
 }
 
