@@ -142,7 +142,8 @@ nav {
 }
 
 .cut {
-  background-color: #15172b;
+  background-color: white;
+  opacity: .2;
   border-radius: 10px;
   height: 20px;
   left: 20px;
@@ -150,7 +151,7 @@ nav {
   top: -20px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 76px;
+  width: 80px;
 }
 
 .cut-short {
@@ -180,7 +181,7 @@ nav {
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
-  color: #808097;
+  color: white;
 }
 
 .input:focus ~ .placeholder {
@@ -209,6 +210,15 @@ nav {
   opacity: .2;
   color: black;
   border: 2px solid black;
+}
+
+.photo-trade {
+  background-color: black;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 575px) {

@@ -40,9 +40,9 @@ const NavBar = (props: NavBarProps): JSX.Element => {
       {(toggleMenu || screenWidth > 575) && (
         <div className="list">
           <p className="items"><NavLink to="/">Home</NavLink></p>
-          <p className="items"><NavLink to="/profile">Profile</NavLink></p>
           <p className="items"><NavLink to="/listings/create">Create Listing</NavLink></p>
           <p className="items"><NavLink to="/listings">Browse Listings</NavLink></p>
+          <p className="items"><NavLink to="/profile">Profile</NavLink></p>
           {/* <li><NavLink to="/profiles">Profiles</NavLink></li> */}
         </div>
       )}

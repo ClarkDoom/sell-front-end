@@ -150,7 +150,7 @@ const CreateListing = (props: CreateListingProps) => {
             htmlFor="type">Listing Type</label>
         </div>
 
-    
+
 
         <div className="input-container ic2">
           <input
@@ -168,24 +168,29 @@ const CreateListing = (props: CreateListingProps) => {
             htmlFor="price">Price</label>
         </div>
 
-        <div className="input-container ic2" id="photo-upload">
-          <h3>Upload Photo</h3>
-          <input
-            type="file"
-            id="photo-upload"
-            name="photo"
-            onChange={handleChangePhoto}
-          />
-        </div>
 
-        <div  className="input-container ic2">
-          <h3>Willing to Trade</h3>
-          <input
-            type="checkbox"
-            checked={checked}
-            onChange={handleCheckbox}
-            id="willing-to-trade"
-          />
+        <div className="photo-trade">
+            <h3>Upload Photo</h3>
+          <div className="input-container ic2" id="photo-upload">
+            <input
+              type="file"
+              id="photo-upload"
+              name="photo"
+              onChange={handleChangePhoto}
+            />
+          </div>
+          </div>
+
+          <div className="photo-trade">
+            <h3>Willing to Trade</h3>
+          <div className="input-container ic2">
+            <input
+              type="checkbox"
+              checked={checked}
+              onChange={handleCheckbox}
+              id="willing-to-trade"
+            />
+          </div>
         </div>
 
 
