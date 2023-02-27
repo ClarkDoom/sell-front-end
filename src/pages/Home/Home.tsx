@@ -15,12 +15,16 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
 
   return (
-    <div>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+    <div className="home-page" >
       {user ?
         <>
-          <h2>Welcome to SELL</h2>
-          <p>A place to put your used gear on the market!</p>
+          <h1>Howdy,</h1>
+          <h1>Welcome to SELL</h1>
+          <h3>A place to put your used media on the market!</h3>
+          <p>Create your first listing.</p>
+          <button className="home-link">Create Listing</button>
+          <p>Or check out posted listings.</p>
+          <button className="home-link">Browse Listings</button>
         </>
         :
         <>

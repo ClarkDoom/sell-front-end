@@ -37,7 +37,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <img src="/hamburger-icon.png" alt="" id="nav-img"/>
         </button>
       </div>
-      {(toggleMenu || screenWidth > 500) && (
+      {(toggleMenu || screenWidth > 575) && (
         <div className="list">
           <p className="items"><NavLink to="/">Home</NavLink></p>
           <p className="items"><NavLink to="/profile">Profile</NavLink></p>

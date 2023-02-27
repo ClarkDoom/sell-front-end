@@ -10,7 +10,7 @@ import * as listingService from '../../services/listingService'
 
 const CreateListing = (props: CreateListingProps) => {
   const { profileId } = props
-  
+
   const navigate = useNavigate()
 
   const [checked, setChecked] = useState(false)
@@ -69,93 +69,231 @@ const CreateListing = (props: CreateListingProps) => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-    >
-      <div>
-        <label htmlFor="item-name">Item Name</label>
-        <input
-          type="text"
-          id="item-name"
-          value={itemName}
-          name="itemName"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="photo-upload">
-          Upload Photo
-        </label>
-        <input
-          type="file"
-          id="photo-upload"
-          name="photo"
-          onChange={handleChangePhoto}
-        />
-      </div>
-      <div>
-        <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          id="description"
-          value={description}
-          name="description"
-          onChange={handleChange}
-        />
-      </div>
+    <div className="create-listing-form">
 
-      <div>
-        <label htmlFor="condition">Condition</label>
-        <select
-          id="condition"
-          value={condition}
-          name="condition"
-          onChange={selectChange}
-        >
-          <option value="Select">Select</option>
-          <option value="Like New">Like New</option>
-          <option value="Fair">Fair</option>
-          <option value="Poor">Poor</option>
-        </select>
-      </div>
+      <form
+        className="form"
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <div className="title">Welcome</div>
+        <div className="subtitle">Create a listing!</div>
 
-      <div>
-        <label htmlFor="type">Listing Type</label>
-        <select
-          id="type"
-          value={type}
-          name="type"
-          onChange={selectChange}
-        >
-          <option value="Select">Select</option>
-          <option value="Movie">Movie</option>
-          <option value="Books">Books</option>
-          <option value="Music">Music</option>
-        </select>
-      </div>
+        <div className="input-container ic1">
+          <input
+            className="input"
+            placeholder=" "
+            type="text"
+            id="item-name"
+            value={itemName}
+            name="itemName"
+            onChange={handleChange}
+          />
+          <div className="cut"></div>
+          <label
+            className="placeholder"
+            htmlFor="item-name"
+          >Item Name</label>
+        </div>
 
-      <div>
-        <label htmlFor="open-to-trade">Open to trade?</label>
-        <input 
-          type="checkbox"
-          checked={checked}
-          onChange={handleCheckbox}
-        />
-      </div>
-      
-      <div>
-        <label htmlFor="price">Price</label>
-        <input 
-          type="number"
-          id="price"
-          value={price}
-          name="price"
-          onChange={handleChange}
-        />
-      </div>
-      <button>Submit</button>
-    </form>
+        <div className="input-container ic2">
+          <input
+            className="input"
+            placeholder=" "
+            type="text"
+            id="description"
+            value={description}
+            name="description"
+            onChange={handleChange}
+          />
+          <div className="cut"></div>
+          <label
+            className="placeholder"
+            htmlFor="description">Description</label>
+        </div>
+
+        <div className="input-container ic2">
+          <select
+            className="input"
+            id="condition"
+            value={condition}
+            name="condition"
+            onChange={selectChange}
+          >
+            <option value="Select">Select</option>
+            <option value="Like New">Like New</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
+          </select>
+          <div className="cut"></div>
+          <label
+            className="placeholder"
+            htmlFor="description">Condition</label>
+        </div>
+
+        <div className="input-container ic2">
+          <select
+            className="input"
+            id="type"
+            value={type}
+            name="type"
+            onChange={selectChange}
+          >
+            <option value="Select">Select</option>
+            <option value="Movie">Movie</option>
+            <option value="Books">Books</option>
+            <option value="Music">Music</option>
+          </select>
+          <div className="cut"></div>
+          <label
+            className="placeholder"
+            htmlFor="type">Listing Type</label>
+        </div>
+
+    
+
+        <div className="input-container ic2">
+          <input
+            className="input"
+            placeholder=" "
+            type="number"
+            id="price"
+            value={price}
+            name="price"
+            onChange={handleChange}
+          />
+          <div className="cut"></div>
+          <label
+            className="placeholder"
+            htmlFor="price">Price</label>
+        </div>
+
+        <div className="input-container ic2" id="photo-upload">
+          <h3>Upload Photo</h3>
+          <input
+            type="file"
+            id="photo-upload"
+            name="photo"
+            onChange={handleChangePhoto}
+          />
+        </div>
+
+        <div  className="input-container ic2">
+          <h3>Willing to Trade</h3>
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={handleCheckbox}
+            id="willing-to-trade"
+          />
+        </div>
+
+
+        <button className="submit">Submit</button>
+      </form>
+
+
+      {/* <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className="form"
+      >
+        <div className="title">Welcome</div>
+        <div className="subtitle">Create your listing!</div>
+
+        <div className="input-container ic1">
+          <input
+            type="text"
+            id="item-name"
+            value={itemName}
+            name="itemName"
+            onChange={handleChange}
+          />
+          <div className="cut"></div>
+          <label htmlFor="item-name">Item Name</label>
+        </div>
+
+
+
+        here
+        <div className="input-container ic1">
+          <input
+            type="file"
+            id="photo-upload"
+            name="photo"
+            onChange={handleChangePhoto}
+          />
+          <div className="cut"></div>
+          <label htmlFor="photo-upload">
+            Upload Photo
+          </label>
+        </div>
+
+
+        here
+        <div>
+          <label htmlFor="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            value={description}
+            name="description"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="condition">Condition</label>
+          <select
+            id="condition"
+            value={condition}
+            name="condition"
+            onChange={selectChange}
+          >
+            <option value="Select">Select</option>
+            <option value="Like New">Like New</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="type">Listing Type</label>
+          <select
+            id="type"
+            value={type}
+            name="type"
+            onChange={selectChange}
+          >
+            <option value="Select">Select</option>
+            <option value="Movie">Movie</option>
+            <option value="Books">Books</option>
+            <option value="Music">Music</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="open-to-trade">Open to trade?</label>
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={handleCheckbox}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            value={price}
+            name="price"
+            onChange={handleChange}
+          />
+        </div>
+        <button>Submit</button>
+      </form> */}
+    </div>
   );
 }
 

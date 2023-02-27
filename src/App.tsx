@@ -41,7 +41,7 @@ function App(): JSX.Element {
   }
 
   return (
-    <>
+    <div className="app-tsx">
       <NavBar user={user} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -111,7 +111,7 @@ function App(): JSX.Element {
         />
       </Routes>
       
-    </>
+    </div>
   )
 }
 
