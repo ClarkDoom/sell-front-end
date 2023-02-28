@@ -18,11 +18,14 @@ const ListingCard = (props: ListingProps): JSX.Element => {
         <Link
           to={`/listings/${listing.id}`}
           state={{ listingId: listing.id, profileId: listing.profileId }}
-        >
+          >
           <button className="listing-card-submit-btn">
             More Details
           </button>
         </Link>
+        <div>
+          <p>{listing.sold ? "LISTING MARKED AS SOLD" : ""}</p>
+        </div>
       </div>
 
     </div>
