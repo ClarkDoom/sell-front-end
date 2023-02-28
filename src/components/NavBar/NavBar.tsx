@@ -32,7 +32,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   return (
     <nav>
       <div className="app-header">
-        <img src="/sell-icon.png" alt="" id="app-img" />
+          <img src="/sell-icon.png" alt="" id="app-img" />
         <button id="hamburger" onClick={toggleNav} className="nav-btn">
           <img src="/hamburger-icon.png" alt="" id="nav-img" />
         </button>

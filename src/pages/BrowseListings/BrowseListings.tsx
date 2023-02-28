@@ -28,10 +28,10 @@ const BrowseListings = () => {
   }, [])
 
   return (
-    <>
+    <div className="browse-listings-page">
       <h1>Browse Listings</h1>
       <Search details={listings}/>
-    </>
+    </div>
   );
 }
 
