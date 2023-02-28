@@ -19,7 +19,7 @@ const ListingCard = (props: ListingProps): JSX.Element => {
           to={`/listings/${listing.id}`}
           state={{ listingId: listing.id, profileId: listing.profileId }}
         >
-          <button>
+          <button className="listing-card-submit-btn">
             More Details
           </button>
         </Link>

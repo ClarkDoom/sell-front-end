@@ -141,7 +141,7 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
         <div className="name-and-contact">
           <p>{profile.name}</p>
           <a href={`mailto:${profile.email}?subject=${listing.itemName}&body=Hello, is this item still available?`}>
-            <button>Contact Seller</button>
+            <button id="contact-seller-btn">Contact Seller</button>
           </a>
         </div>
       </div>
