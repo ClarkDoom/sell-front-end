@@ -60,7 +60,7 @@ const ShowListing = (props: ShowListingProps): JSX.Element => {
     try {
       await listingService.editListing({ sold: true }, listing.id)
       alert("Listing marked as sold")
-      navigate(`/listings`)
+      navigate(`/profile`)
     } catch (err) {
       console.log(err)
     }
