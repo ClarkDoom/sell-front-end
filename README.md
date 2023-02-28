@@ -7,7 +7,7 @@
 <br>
 </p>
 
-I built SELL as a used media marketplace concept. I collect vinyl records, blu rays/4k's, books, comics, and toys and wanted a place to put those on the market easily without Ebay's cumbersom verification and posting process. The intent behind SELL is that it's simple UI and dedicated purpose would set it apart from larger marketplaces like ebay and attract a network of folks interested in trading, as well as selling/purchasing used media. <br><br><br>
+I built SELL as a used media marketplace concept. I collect vinyl records, blu rays/4k's, books, comics, and toys and wanted a place to put those on the market easily without Ebay's cumbersom verification and posting process. The intent behind SELL is that it's simple UI and dedicated purpose would set it apart from larger marketplaces like ebay and attract a network of folks interested in trading, as well as selling/purchasing used media.
 
 <br>
 
@@ -28,8 +28,7 @@ I built SELL as a used media marketplace concept. I collect vinyl records, blu r
 
 - PERN stack (Postgres, Express.js, React, Node.js) with typescript being utilized on the front end.
 - Front end deployed via netlify, Back end deployed via fly.io.
-
-<a href="https://trello.com/invite/b/zr5ehM8N/ATTIdc786ffe8ba6008688d45a2e3f1038aa5580B1AC/unit-4-project-sell">Link</a> to Planning Materials
+- <a href="https://trello.com/invite/b/zr5ehM8N/ATTIdc786ffe8ba6008688d45a2e3f1038aa5580B1AC/unit-4-project-sell">Link</a> to Planning Materials
 
 ## Future Enhancements 
 
