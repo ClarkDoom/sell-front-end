@@ -25,7 +25,15 @@ nav {
   color: white;
   text-decoration: none;
 }
+.items:active {
+  transform: translateX(-4px);
+}
 
+.items {
+  font-size: small;
+  text-transform: uppercase;
+  padding: 10px;
+}
 .items {
   font-size: small;
   text-transform: uppercase;
