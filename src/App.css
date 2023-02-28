@@ -56,6 +56,11 @@ nav {
   margin-left: 33%;
 }
 
+#hamburger:active {
+  transform: translateX(-4px);
+}
+
+
 /* app tsx */
 
 .app-tsx {
