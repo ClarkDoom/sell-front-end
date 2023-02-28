@@ -552,4 +552,13 @@ nav {
     width: 30%;
     margin: auto;
   }
+
+  .show-listing-page {
+    width: 50%;
+    margin: auto;
+  }
+  #listing-img, #profile-img {
+    width: 30%;
+    margin: auto;
+  }
 }
