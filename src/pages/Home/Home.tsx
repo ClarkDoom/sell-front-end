@@ -30,10 +30,15 @@ const Landing = (props: LandingProps): JSX.Element => {
           </Link>
         </>
         :
-        <div className="home-btns">
-          <Link className="home-btn" to="/signup">Sign Up</Link>
-          <Link className="home-btn" to="/login">Log In</Link>
-        </div>
+        <>
+          <h1>Welcome to SELL</h1>
+          <h3>A place to put your used media on the market!</h3>
+          <p>Create your account or login to begin.</p>
+          <div className="home-btns">
+            <Link className="home-btn" to="/signup">Sign Up</Link>
+            <Link className="home-btn" to="/login">Log In</Link>
+          </div>
+        </>
 
       }
     </div>
