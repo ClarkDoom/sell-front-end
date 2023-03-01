@@ -520,6 +520,14 @@ nav {
   border: 2px solid rgb(169, 175, 66);
 }
 
+/* login page  */
+
+.login-page {
+  width: 30%;
+  margin: auto;
+}
+
+
 @media screen and (max-width: 575px) {
   .nav-btn {
     display: block;
