@@ -7,7 +7,7 @@
 <br>
 </p>
 
-I built SELL as a used media marketplace concept. I collect vinyl records, blu rays/4k's, books, comics, and toys and wanted a place to put those on the market easily without Ebay's cumbersom verification and posting process. I also wanted to attract a network of folks interested in trading, as well as selling/purchasing used media. The intent behind SELL is that it's simple UI and dedicated purpose would set it apart from larger marketplaces like ebay.
+I built SELL as a used media marketplace concept because I collect vinyl records, blu rays/4k's, books, comics, and toys and wanted a place to put those on the market easily without Ebay's cumbersom verification and posting process. I also wanted to attract a network of folks interested in trading, as well as selling/purchasing used media. The intent behind SELL is that it's simple UI and dedicated purpose would set it apart from larger marketplaces like ebay.
 
 <br>
 
@@ -32,6 +32,6 @@ I built SELL as a used media marketplace concept. I collect vinyl records, blu r
 
 ## Future Enhancements 
 
-- Additional listing categorires and associated filter actions. 
+- Additional listing categorires and associated filter actions. (i.e. Toys)
 - Sort by listing creation date. 
 - Upload multiple listing photos. 
