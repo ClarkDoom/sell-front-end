@@ -522,8 +522,9 @@ nav {
 
 /* login page  */
 
+
 .login-page {
-  width: 30%;
+  width: 80%;
   margin: auto;
 }
 
@@ -566,6 +567,11 @@ nav {
     margin: auto;
   }
   #listing-img, #profile-img {
+    width: 30%;
+    margin: auto;
+  }
+
+  .login-page {
     width: 30%;
     margin: auto;
   }
