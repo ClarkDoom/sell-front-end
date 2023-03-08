@@ -46,7 +46,7 @@ function Search(props: SearchProps) {
 
   function searchList() {
     return (
-        <SearchList filteredListings={filteredListings} />
+      <SearchList filteredListings={filteredListings} />
     );
   }
 
@@ -74,30 +74,29 @@ function Search(props: SearchProps) {
           placeholder="Search Listings"
           onChange={handleChange}
         />
-
-        <h4>Categories</h4>
-        <button className="Movie" onClick={handleCategory} value="Movie" id="search-component-button">
-          <img className="Movie" src="/dvd.png" alt="Movie" />
-        </button>
-        <button className="Book" onClick={handleCategory} value="Book" id="search-component-button">
-          <img className="Book" src="/books.png" alt="Book" />
-        </button>
-        <button className="Music" onClick={handleCategory} value="Music" id="search-component-button">
-          <img className="Music" src="/music.png" alt="Music" />
-        </button>
-        <button className="" onClick={handleCategory} value="" id="search-reset-button">
-          <img src="/reset.png" alt="" />
-        </button>
-
-        <h4>Sort by Price</h4>
-        <div className="sort-icons">
-          <button onClick={handleSort} value={"asc"} className="sort-icon" id="search-component-button">
-            <img src="/arrow-up.png" alt="asc" />
+          <h4>Categories</h4>
+          <button className="Movie" onClick={handleCategory} value="Movie" id="search-component-button">
+            <img className="Movie" src="/dvd.png" alt="Movie" />
           </button>
+          <button className="Book" onClick={handleCategory} value="Book" id="search-component-button">
+            <img className="Book" src="/books.png" alt="Book" />
+          </button>
+          <button className="Music" onClick={handleCategory} value="Music" id="search-component-button">
+            <img className="Music" src="/music.png" alt="Music" />
+          </button>
+          <button className="" onClick={handleCategory} value="" id="search-reset-button">
+            <img src="/reset.png" alt="" />
+          </button>
+
+          <h4>Sort by Price</h4>
+          <div className="sort-icons">
+            <button onClick={handleSort} value={"asc"} className="sort-icon" id="search-component-button">
+              <img src="/arrow-up.png" alt="asc" />
+            </button>
             <button onClick={handleSort} value={"des"} className="sort-icon" id="search-component-button">
               <img src="/arrow-down.png" alt="des" />
             </button>
-        </div>
+          </div>
 
       </div>
       {searchList()}
